@@ -8,10 +8,9 @@ import reactor.core.publisher.Flux;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.time.Duration;
 
 @Log4j2
-public class Client {
+public class MyWebSocketClient {
 
     public static void main(String[] args) throws URISyntaxException, InterruptedException {
 
@@ -30,3 +29,5 @@ public class Client {
         ).block();
     }
 }
+
+// https://hantsy.github.io/spring-reactive-sample/web/websocket.html
