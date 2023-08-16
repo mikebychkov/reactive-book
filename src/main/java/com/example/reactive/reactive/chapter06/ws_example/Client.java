@@ -26,7 +26,7 @@ public class Client {
                         .map(WebSocketMessage::getPayloadAsText)
                         .doOnEach(log::info)
                         .then()
-        ).block(Duration.ofSeconds(10));
-
+                        .doOnTerminate(() -> log.info("CONNECTION TERMINATED"))
+        ).block();
     }
 }

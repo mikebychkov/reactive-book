@@ -18,7 +18,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
                 .doOnNext(message -> {
                     log.info("WS MSG: {}", message);
                 })
-                .map(message -> "WS RESPONSE" + message)
+                .map(message -> "WS RESPONSE: " + message)
                 .map(session::textMessage)
                 .as(session::send);
     }
